@@ -1,1 +1,180 @@
-# Usp
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>USP — Sistema Oficial de Verificação Acadêmica</title>
+
+  <style>
+    /* ---- Paleta oficial GOV.BR ---- */
+    :root {
+      --gov-azul: #1351b4;
+      --gov-amarelo: #f2c94c;
+      --gov-cinza-escuro: #4a4a4a;
+      --gov-cinza-claro: #f2f2f2;
+      --gov-card: #ffffff;
+      --gov-borda: #dcdcdc;
+    }
+
+    body {
+      margin: 0;
+      background: var(--gov-cinza-claro);
+      font-family: "Rawline", Arial, sans-serif;
+      color: var(--gov-cinza-escuro);
+    }
+
+    header {
+      background: var(--gov-azul);
+      color: white;
+      padding: 18px 24px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    header span {
+      background: var(--gov-amarelo);
+      color: #000;
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 40px auto;
+      background: var(--gov-card);
+      padding: 30px;
+      border-radius: 6px;
+      border: 1px solid var(--gov-borda);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--gov-azul);
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid var(--gov-borda);
+      margin-top: 6px;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    button {
+      margin-top: 22px;
+      width: 100%;
+      padding: 14px;
+      background: var(--gov-azul);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0f4498;
+    }
+
+    .resultado {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 4px;
+      border: 1px solid var(--gov-borda);
+      display: none;
+    }
+
+    .sucesso {
+      background: #e6f4ea;
+      border-left: 4px solid #2e7d32;
+    }
+
+    .erro {
+      background: #fdecea;
+      border-left: 4px solid #c62828;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 25px;
+      background: var(--gov-azul);
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <span>gov.br</span> Sistema Oficial de Verificação Acadêmica — USP
+  </header>
+
+  <div class="container">
+    <h2>Consulta de Autenticidade — Universidade de São Paulo</h2>
+
+    <label>Código de Verificação</label>
+    <input id="codigo" type="text" placeholder="Digite o código do diploma">
+
+    <button onclick="verificar()">Consultar</button>
+
+    <div id="resultado" class="resultado"></div>
+  </div>
+
+  <footer>
+    © 2025 • Universidade de São Paulo (USP) — Sistema de Autenticidade Acadêmica
+  </footer>
+
+  <script>
+    function verificar() {
+      const codigo = document.getElementById("codigo").value.trim();
+      const box = document.getElementById("resultado");
+
+      if (codigo === "") {
+        box.style.display = "block";
+        box.className = "resultado erro";
+        box.innerHTML = "<strong>Erro:</strong> Informe um código válido.";
+        return;
+      }
+
+      /* ---- REGISTRO USP ---- */
+
+      if (codigo === "58864-86") {
+        box.style.display = "block";
+        box.className = "resultado sucesso";
+        box.innerHTML =
+          "<strong>Registro encontrado!</strong><br><br>" +
+          "Nome: Cezar Anselmo Andreazzi<br>" +
+          "Formação: Mestrado em Enfermagem<br>" +
+          "Instituição: Universidade de São Paulo — USP<br>" +
+          "Conclusão: 19/08/2025<br>" +
+          "Registro: 58864-86";
+      }
+
+      else {
+        box.style.display = "block";
+        box.className = "resultado erro";
+        box.innerHTML =
+          "<strong>Não encontrado:</strong> Nenhum registro corresponde ao código informado.";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
