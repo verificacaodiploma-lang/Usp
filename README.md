@@ -153,17 +153,16 @@
       }
 
       /* ---- REGISTRO USP ---- */
-
-      if (codigo === "58864-86") {
+      if (codigo === "58755-86") {
         box.style.display = "block";
         box.className = "resultado sucesso";
         box.innerHTML =
           "<strong>Registro encontrado!</strong><br><br>" +
-          "Nome: Cezar Anselmo Andreazzi<br>" +
-          "Formação: Mestrado em Enfermagem<br>" +
+          "Nome: Jacqueline Ferreira da Silva<br>" +
+          "Formação: Mestrado em Psicologia<br>" +
           "Instituição: Universidade de São Paulo — USP<br>" +
-          "Conclusão: 19/08/2025<br>" +
-          "Registro: 58864-86";
+          "Conclusão: 13/08/2021<br>" +
+          "Registro: 58755-86";
       }
 
       else {
