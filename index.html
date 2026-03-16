@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>USP — Sistema Oficial de Verificação Acadêmica</title>
+  <title>USP - Sistema Oficial de Verificação Acadêmica</title>
 
   <style>
-    /* ---- Paleta oficial GOV.BR ---- */
     :root {
       --gov-azul: #1351b4;
       --gov-amarelo: #f2c94c;
@@ -20,7 +19,7 @@
     body {
       margin: 0;
       background: var(--gov-cinza-claro);
-      font-family: "Rawline", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       color: var(--gov-cinza-escuro);
     }
 
@@ -122,14 +121,14 @@
 <body>
 
   <header>
-    <span>gov.br</span> Sistema Oficial de Verificação Acadêmica — USP
+    <span>demo</span> Sistema Demonstrativo de Verificação Acadêmica
   </header>
 
   <div class="container">
-    <h2>Consulta de Autenticidade — Universidade de São Paulo</h2>
+    <h2>Consulta de Registro Acadêmico</h2>
 
     <label>Código de Verificação</label>
-    <input id="codigo" type="text" placeholder="Digite o código do diploma">
+    <input id="codigo" type="text" placeholder="Digite o código do registro">
 
     <button onclick="verificar()">Consultar</button>
 
@@ -137,7 +136,7 @@
   </div>
 
   <footer>
-    © 2025 • Universidade de São Paulo (USP) — Sistema de Autenticidade Acadêmica
+    USP
   </footer>
 
   <script>
@@ -152,7 +151,7 @@
         return;
       }
 
-      /* ---- REGISTRO USP ---- */
+      /* REGISTRO 1 */
       if (codigo === "58755-86") {
         box.style.display = "block";
         box.className = "resultado sucesso";
@@ -160,9 +159,22 @@
           "<strong>Registro encontrado!</strong><br><br>" +
           "Nome: Jacqueline Ferreira da Silva<br>" +
           "Formação: Mestrado em Psicologia<br>" +
-          "Instituição: Universidade de São Paulo — USP<br>" +
+          "Instituição: Universidade de São Paulo - USP" +
           "Conclusão: 13/08/2021<br>" +
           "Registro: 58755-86";
+      }
+
+      /* REGISTRO 2 */
+      else if (codigo === "233465-12") {
+        box.style.display = "block";
+        box.className = "resultado sucesso";
+        box.innerHTML =
+          "<strong>Registro encontrado!</strong><br><br>" +
+          "Nome: Juliana Benevides Aires de Castro<br>" +
+          "Formação: Pós-Graduação em Psicologia Perinatal e Parental<br>" +
+          "Instituição: Universidade de São Paulo - USP" +
+          "Conclusão: 24/06/2021<br>" +
+          "Registro: 233465-12";
       }
 
       else {
@@ -175,5 +187,4 @@
   </script>
 
 </body>
-
 </html>
