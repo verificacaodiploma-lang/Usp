@@ -140,6 +140,39 @@
   </footer>
 
   <script>
+    const registros = {
+      "58755-86": {
+        nome: "Jacqueline Ferreira da Silva",
+        formacao: "Mestrado em Psicologia",
+        instituicao: "Universidade de São Paulo - USP",
+        conclusao: "13/08/2021"
+      },
+      "233465-12": {
+        nome: "Juliana Benevides Aires de Castro",
+        formacao: "Pós-Graduação em Psicologia Perinatal e Parental",
+        instituicao: "Universidade de São Paulo - USP",
+        conclusao: "24/06/2021"
+      },
+      "3577656-99": {
+        nome: "José Leonardo Viana da Silva",
+        formacao: "Mestrado em Educação Física",
+        instituicao: "Universidade de São Paulo - USP",
+        conclusao: "13/08/2024"
+      },
+      "25554455-77": {
+        nome: "Francinaldo Silva dos Santos",
+        formacao: "Mestrado em Física",
+        instituicao: "Universidade de São Paulo - USP",
+        conclusao: "13/08/2024"
+      },
+      "356777-87": {
+        nome: "Nayra Cristina Vieira Nicacio",
+        formacao: "Mestrado em Educação",
+        instituicao: "Universidade de São Paulo - USP",
+        conclusao: "13/08/2024"
+      }
+    };
+
     function verificar() {
       const codigo = document.getElementById("codigo").value.trim();
       const box = document.getElementById("resultado");
@@ -151,59 +184,19 @@
         return;
       }
 
-      /* REGISTRO 1 */
-      if (codigo === "58755-86") {
+      const registro = registros[codigo];
+
+      if (registro) {
         box.style.display = "block";
         box.className = "resultado sucesso";
         box.innerHTML =
           "<strong>Registro encontrado!</strong><br><br>" +
-          "Nome: Jacqueline Ferreira da Silva<br>" +
-          "Formação: Mestrado em Psicologia<br>" +
-          "Instituição: Universidade de São Paulo - USP<br>" +
-          "Conclusão: 13/08/2021<br>" +
-          "Registro: 58755-86";
-      }
-
-      /* REGISTRO 2 */
-      else if (codigo === "233465-12") {
-        box.style.display = "block";
-        box.className = "resultado sucesso";
-        box.innerHTML =
-          "<strong>Registro encontrado!</strong><br><br>" +
-          "Nome: Juliana Benevides Aires de Castro<br>" +
-          "Formação: Pós-Graduação em Psicologia Perinatal e Parental<br>" +
-          "Instituição: Universidade de São Paulo - USP<br>" +
-          "Conclusão: 24/06/2021<br>" +
-          "Registro: 233465-12";
-      }
-
-      /* REGISTRO 3 */
-      else if (codigo === "3577656-99") {
-        box.style.display = "block";
-        box.className = "resultado sucesso";
-        box.innerHTML =
-          "<strong>Registro encontrado!</strong><br><br>" +
-          "Nome: José Leonardo Viana da Silva<br>" +
-          "Formação: Mestrado em Educação Física<br>" +
-          "Instituição: Universidade de São Paulo - USP<br>" +
-          "Conclusão: 13/08/2024<br>" +
-          "Registro: 3577656-99";
-      }
-
-      /* REGISTRO 4 */
-      else if (codigo === "25554455-77") {
-        box.style.display = "block";
-        box.className = "resultado sucesso";
-        box.innerHTML =
-          "<strong>Registro encontrado!</strong><br><br>" +
-          "Nome: Francinaldo Silva dos Santos<br>" +
-          "Formação: Mestrado em Física<br>" +
-          "Instituição: Universidade de São Paulo - USP<br>" +
-          "Conclusão: 13/08/2024<br>" +
-          "Registro: 25554455-77";
-      }
-
-      else {
+          "Nome: " + registro.nome + "<br>" +
+          "Formação: " + registro.formacao + "<br>" +
+          "Instituição: " + registro.instituicao + "<br>" +
+          "Conclusão: " + registro.conclusao + "<br>" +
+          "Registro: " + codigo;
+      } else {
         box.style.display = "block";
         box.className = "resultado erro";
         box.innerHTML =
